@@ -1,11 +1,63 @@
 // =========================
+//  テーマ（ライト/ダークモード）管理
+// =========================
+
+function getPreferredTheme() {
+  const hour = new Date().getHours();
+  // 6:00〜16:59 はライト、17:00〜5:59 はダーク
+  if (hour >= 6 && hour <= 16) {
+    return "light";
+  }
+  return "dark";
+}
+
+function setTheme(theme) {
+  if (theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+  localStorage.setItem("theme", theme);
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    const preferred = getPreferredTheme();
+    setTheme(preferred);
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const next = current === "dark" ? "light" : "dark";
+  setTheme(next);
+}
+
+// テーマ初期化（DOM 読み込み前でも OK）
+initTheme();
+
+// =========================
 //  DOM 読み込み完了後に実行
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
   initContactForm();
+  initThemeToggle();
 });
+
+// =========================
+//  テーマ切替ボタン
+// =========================
+function initThemeToggle() {
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (!themeToggle) return;
+
+  themeToggle.addEventListener("click", toggleTheme);
+}
 
 // =========================
 //  モバイルメニュー
