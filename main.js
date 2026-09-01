@@ -2,15 +2,6 @@
 //  テーマ（ライト/ダークモード）管理
 // =========================
 
-function getPreferredTheme() {
-  const hour = new Date().getHours();
-  // 6:00〜16:59 はライト、17:00〜5:59 はダーク
-  if (hour >= 6 && hour <= 16) {
-    return "light";
-  }
-  return "dark";
-}
-
 function setTheme(theme) {
   if (theme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
@@ -22,11 +13,11 @@ function setTheme(theme) {
 
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
+  // 保存されたテーマがあればそれを適用、なければライトモード（デフォルト）
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
-    const preferred = getPreferredTheme();
-    setTheme(preferred);
+    setTheme("light");
   }
 }
 
