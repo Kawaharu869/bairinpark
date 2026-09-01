@@ -726,5 +726,119 @@ img {
   box-shadow: var(--shadow-lg);
   background-color: #5a46a0;
 　}
+
+　/* =========================
+   ヘッダーアクション（テーマ切替ボタン）
+   ========================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--md-sys-color-surface-variant);
+  border-color: var(--md-sys-color-outline-variant);
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ライトモード時：月アイコン表示、太陽非表示 */
+.theme-icon-dark {
+  display: none;
+}
+
+/* ダークモード時：太陽アイコン表示、月非表示 */
+[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: block;
+}
+
+/* =========================
+   ダークモード用カラー変数
+   ========================= */
+
+[data-theme="dark"] {
+  --md-sys-color-primary: #d0bcff;
+  --md-sys-color-on-primary: #381e72;
+  --md-sys-color-primary-container: #4f378b;
+  --md-sys-color-on-primary-container: #eaddff;
+
+  --md-sys-color-secondary: #ccc2dc;
+  --md-sys-color-on-secondary: #332d41;
+  --md-sys-color-secondary-container: #4a4458;
+  --md-sys-color-on-secondary-container: #e8def8;
+
+  --md-sys-color-tertiary: #efb8c8;
+  --md-sys-color-on-tertiary: #492532;
+  --md-sys-color-tertiary-container: #633b48;
+  --md-sys-color-on-tertiary-container: #ffd8e4;
+
+  --md-sys-color-background: #141218;
+  --md-sys-color-on-background: #e6e1e5;
+
+  --md-sys-color-surface: #141218;
+  --md-sys-color-surface-variant: #37323b;
+  --md-sys-color-on-surface: #e6e1e5;
+  --md-sys-color-on-surface-variant: #cac4d0;
+
+  --md-sys-color-outline: #938f99;
+  --md-sys-color-outline-variant: #49454f;
+
+  --md-sys-color-success: #81c990;
+  --md-sys-color-warning: #ffb787;
+  --md-sys-color-error: #f2b8b5;
+　}
+
+[data-theme="dark"] .header {
+  background-color: rgba(20, 18, 24, 0.9);
+　}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-tertiary-container));
+　}
+
+[data-theme="dark"] .image-placeholder {
+  background: linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-secondary-container));
+  color: var(--md-sys-color-on-primary-container);
+　}
+
+[data-theme="dark"] .map-frame {
+  border-color: var(--md-sys-color-outline-variant);
+　}
+
+/* =========================
+   梅林公園について（サブタイトル）
+   ========================= */
+
+.about-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+　}
    
 }
