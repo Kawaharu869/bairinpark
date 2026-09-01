@@ -50,16 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================
-//  テーマ切替ボタン
-// =========================
-function initThemeToggle() {
-  const themeToggle = document.querySelector(".theme-toggle");
-  if (!themeToggle) return;
-
-  themeToggle.addEventListener("click", toggleTheme);
-}
-
-// =========================
 //  モバイルメニュー
 // =========================
 function initMobileMenu() {
@@ -118,9 +108,6 @@ function initContactForm() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // 実際の送信処理はバックエンドや外部サービスと連携する必要があります
-    // ここでは簡易的にアラートを表示する例を示します
-
     const name = form.querySelector("#name")?.value.trim();
     const email = form.querySelector("#email")?.value.trim();
     const message = form.querySelector("#message")?.value.trim();
@@ -130,17 +117,23 @@ function initContactForm() {
       return;
     }
 
-    // 簡易バリデーション（メール形式）
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       alert("メールアドレスの形式が正しくありません。");
       return;
     }
 
-    // ここに実際の送信処理（fetch など）を記述
-    // 例: Google Forms や Formspree などの外部フォームサービスと連携可能
-
     alert("送信ありがとうございます！（デモ）\n\n実際の送信には、バックエンドやフォームサービスの設定が必要です。");
     form.reset();
   });
+}
+
+// =========================
+//  テーマ切替ボタン
+// =========================
+function initThemeToggle() {
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (!themeToggle) return;
+
+  themeToggle.addEventListener("click", toggleTheme);
 }
