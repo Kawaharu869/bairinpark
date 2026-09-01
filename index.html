@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ヘッダー -->
+
+<!-- ヘッダー -->
   <header class="header">
     <div class="header-container">
       <div class="logo">
@@ -27,9 +28,15 @@
           <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" aria-label="メニューを開く">
-        <span class="menu-icon"></span>
-      </button>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="テーマ切り替え">
+          <span class="theme-icon-light">🌙</span>
+          <span class="theme-icon-dark">☀️</span>
+        </button>
+        <button class="menu-toggle" aria-label="メニューを開く">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -63,6 +70,17 @@
               <li>散歩に最適な遊歩道</li>
               <li>ベンチや休憩スペース</li>
             </ul>
+
+            <h3 class="about-subtitle">武蔵ゆかりの座禅石</h3>
+            <p>
+              梅林公園の一番の特徴は、宮本武蔵ゆかりの伝説が残る<strong>「座禅石」</strong>です。
+              武蔵が修行時代に座禅を組んだとされるこの石は、現在も公園内に静かに佇んでいます。
+            </p>
+            <p>
+              座禅石は、武蔵の剣術修行や精神統一の象徴として地域に伝えられており、
+              歴史ファンや武蔵ファンにとって特別な場所となっています。
+              梅林の花と合わせて、歴史と自然を感じられるスポットです。
+            </p>
           </div>
           <div class="about-image">
             <!-- 後で実際の画像を配置 -->
@@ -71,7 +89,7 @@
         </div>
       </div>
     </section>
-
+    
     <!-- お知らせ -->
     <section id="news" class="section section-alt">
       <div class="container">
