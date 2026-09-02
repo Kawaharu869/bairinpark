@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- テーマ初期化スクリプト（最優先） -->
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
+<!-- テーマ初期化スクリプト（最優先） -->
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  })();
+</script>
   
   <meta charset="UTF-8" />
   <title>谷尾崎町梅林公園 非公式 HP</title>
