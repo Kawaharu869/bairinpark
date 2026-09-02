@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  })();
+</script>
   <meta charset="UTF-8" />
   <title>谷尾崎町梅林公園 非公式 HP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
