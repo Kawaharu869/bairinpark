@@ -4,7 +4,7 @@
 
 let currentSlide = 0;
 let slideInterval;
-const totalSlides = 4;
+let totalSlides = 4;
 
 function updateSlider() {
   const wrapper = document.querySelector('.slider-wrapper');
@@ -35,34 +35,50 @@ function goToSlide(index) {
 }
 
 function startAutoSlide() {
+  stopAutoSlide();
   slideInterval = setInterval(nextSlide, 3000);
 }
 
 function stopAutoSlide() {
   if (slideInterval) {
     clearInterval(slideInterval);
+    slideInterval = null;
   }
 }
 
 function initSlider() {
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const slides = document.querySelectorAll('.slide');
+  
+  if (!sliderWrapper || !slides.length) {
+    console.log('Slider not found');
+    return;
+  }
+  
+  totalSlides = slides.length;
+  
   const prevBtn = document.querySelector('.slider-btn.prev');
   const nextBtn = document.querySelector('.slider-btn.next');
   const dots = document.querySelectorAll('.dot');
   
-  if (!prevBtn || !nextBtn || !dots.length) return;
+  console.log('Slider initialized:', totalSlides, 'slides');
   
   // 矢印ボタン
-  prevBtn.addEventListener('click', () => {
-    prevSlide();
-    stopAutoSlide();
-    startAutoSlide();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  }
   
-  nextBtn.addEventListener('click', () => {
-    nextSlide();
-    stopAutoSlide();
-    startAutoSlide();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  }
   
   // ドット
   dots.forEach((dot, index) => {
@@ -103,6 +119,8 @@ function toggleTheme() {
 //  DOM 読み込み完了後に実行
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM loaded');
+  
   // 保存されたテーマを適用
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -114,10 +132,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (themeToggle) {
     themeToggle.addEventListener("click", toggleTheme);
     console.log("Theme toggle button initialized");
+  } else {
+    console.error("Theme toggle button not found");
   }
   
   // 写真スライダー
-  initSlider();
+  setTimeout(() => {
+    initSlider();
+  }, 100);
   
   // モバイルメニュー
   const menuToggle = document.querySelector(".menu-toggle");
@@ -127,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      console.log("Menu open:", isOpen);
     });
     
     nav.querySelectorAll(".nav-link").forEach((link) => {
