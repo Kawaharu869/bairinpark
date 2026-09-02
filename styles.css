@@ -147,11 +147,13 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 12px 20px;
+  gap: 16px;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .site-title {
@@ -166,9 +168,16 @@ img {
   color: var(--md-sys-color-on-surface-variant);
 }
 
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-list {
   display: flex;
   gap: 24px;
+  justify-content: center;
 }
 
 .nav-link {
@@ -229,6 +238,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .theme-toggle {
@@ -242,10 +252,12 @@ img {
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  position: relative;
 }
 
 .theme-toggle .material-icons {
   color: var(--md-sys-color-on-surface);
+  position: absolute;
 }
 
 .theme-toggle:hover {
@@ -258,12 +270,16 @@ img {
   font-size: 20px;
 }
 
-/* ライトモード：月アイコンのみ表示 */
+/* ライトモード：月アイコンのみ表示（太陽は非表示） */
+.theme-icon-light {
+  display: block;
+}
+
 .theme-icon-dark {
   display: none;
 }
 
-/* ダークモード：太陽アイコンのみ表示 */
+/* ダークモード：太陽アイコンのみ表示（月は非表示） */
 body.dark-mode .theme-icon-light {
   display: none;
 }
@@ -727,6 +743,10 @@ body.dark-mode .theme-toggle .material-icons {
 @media (max-width: 720px) {
   .nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
   }
 
   .menu-toggle {
