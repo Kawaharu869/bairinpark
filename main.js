@@ -36,7 +36,6 @@ initTheme();
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
-  initContactForm();
   initThemeToggle();
 });
 
@@ -86,36 +85,6 @@ function initSmoothScroll() {
         behavior: "smooth",
       });
     });
-  });
-}
-
-// =========================
-//  お問い合わせフォーム（簡易処理）
-// =========================
-function initContactForm() {
-  const form = document.querySelector(".contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = form.querySelector("#name")?.value.trim();
-    const email = form.querySelector("#email")?.value.trim();
-    const message = form.querySelector("#message")?.value.trim();
-
-    if (!name || !email || !message) {
-      alert("すべての項目を入力してください。");
-      return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      alert("メールアドレスの形式が正しくありません。");
-      return;
-    }
-
-    alert("送信ありがとうございます！（デモ）\n\n実際の送信には、バックエンドやフォームサービスの設定が必要です。");
-    form.reset();
   });
 }
 
