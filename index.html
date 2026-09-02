@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- テーマ初期化スクリプト（最優先） -->
   <script>
-  (function() {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  })();
-</script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  
   <meta charset="UTF-8" />
   <title>谷尾崎町梅林公園 非公式 HP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,8 +21,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- ヘッダー -->
+  <!-- ヘッダー -->
   <header class="header">
     <div class="header-container">
       <div class="logo">
@@ -97,7 +98,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- お知らせ -->
     <section id="news" class="section section-alt">
       <div class="container">
@@ -124,7 +125,7 @@
       </div>
     </section>
 
-      <!-- アクセス -->
+    <!-- アクセス -->
     <section id="access" class="section section-alt">
       <div class="container">
         <h2 class="section-title">アクセス</h2>
