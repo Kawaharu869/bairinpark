@@ -3,27 +3,30 @@
 // =========================
 
 function setTheme(theme) {
+  const html = document.documentElement;
   if (theme === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
+    html.setAttribute("data-theme", "dark");
+    html.classList.add("dark-theme");
   } else {
-    document.documentElement.removeAttribute("data-theme");
+    html.removeAttribute("data-theme");
+    html.classList.remove("dark-theme");
   }
   localStorage.setItem("theme", theme);
 }
 
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
-  // 保存されたテーマがあればそれを適用、なければライトモード（デフォルト）
-  if (savedTheme) {
-    setTheme(savedTheme);
+  if (savedTheme === "dark") {
+    setTheme("dark");
   } else {
     setTheme("light");
   }
 }
 
 function toggleTheme() {
-  const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  const next = current === "dark" ? "light" : "dark";
+  const html = document.documentElement;
+  const isDark = html.getAttribute("data-theme") === "dark" || html.classList.contains("dark-theme");
+  const next = isDark ? "light" : "dark";
   setTheme(next);
 }
 
@@ -53,7 +56,6 @@ function initMobileMenu() {
     menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  // ナビリンククリック時にメニューを閉じる
   nav.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("open");
