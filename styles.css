@@ -905,3 +905,109 @@ html.dark-theme .map-frame {
   margin-bottom: 12px;
   letter-spacing: 0.3px;
 }
+
+/* =========================
+   ダークモード - 全体背景・文字色
+   ========================= */
+
+[data-theme="dark"] body {
+  background-color: #141218 !important;
+  color: #e6e1e5 !important;
+}
+
+[data-theme="dark"] .section {
+  background-color: #141218;
+  color: #e6e1e5;
+}
+
+[data-theme="dark"] .section-alt {
+  background-color: #37323b !important;
+  color: #e6e1e5;
+}
+
+[data-theme="dark"] .footer {
+  background-color: #37323b;
+  color: #e6e1e5;
+}
+
+/* =========================
+   ダークモード - テキスト色
+   ========================= */
+
+[data-theme="dark"] .site-title,
+[data-theme="dark"] .site-subtitle,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .hero-subtitle,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .access-subtitle,
+[data-theme="dark"] .about-subtitle,
+[data-theme="dark"] .news-title,
+[data-theme="dark"] .event-title,
+[data-theme="dark"] .form-label {
+  color: #e6e1e5 !important;
+}
+
+[data-theme="dark"] .about-text p,
+[data-theme="dark"] .access-info,
+[data-theme="dark"] .news-summary,
+[data-theme="dark"] .event-summary,
+[data-theme="dark"] .contact-text p,
+[data-theme="dark"] .contact-note-list li,
+[data-theme="dark"] .footer-text,
+[data-theme="dark"] .footer-disclaimer {
+  color: #cac4d0 !important;
+}
+
+/* =========================
+   ダークモード - その他要素
+   ========================= */
+
+[data-theme="dark"] .nav-link {
+  color: #cac4d0;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  background-color: #4f378b;
+  color: #eaddff;
+}
+
+[data-theme="dark"] .hero-button {
+  background-color: #d0bcff;
+  color: #381e72;
+}
+
+[data-theme="dark"] .issues-button {
+  background-color: #d0bcff;
+  color: #381e72;
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+  background-color: #141218;
+  color: #e6e1e5;
+  border-color: #938f99;
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus {
+  border-color: #d0bcff;
+  box-shadow: 0 0 0 3px #4f378b;
+}
+
+[data-theme="dark"] .news-item,
+[data-theme="dark"] .event-card,
+[data-theme="dark"] .contact-form {
+  background-color: #141218;
+  border-color: #49454f;
+}
+
+[data-theme="dark"] .image-placeholder {
+  background: linear-gradient(135deg, #4f378b, #4a4458) !important;
+  color: #eaddff !important;
+}
+
+[data-theme="dark"] .map-frame {
+  border-color: #49454f !important;
+}
+
+}
