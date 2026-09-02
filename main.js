@@ -1,4 +1,83 @@
 // =========================
+//  写真スライダー管理
+// =========================
+
+let currentSlide = 0;
+let slideInterval;
+const totalSlides = 4;
+
+function updateSlider() {
+  const wrapper = document.querySelector('.slider-wrapper');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (!wrapper || !dots.length) return;
+  
+  wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+  
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateSlider();
+}
+
+function startAutoSlide() {
+  slideInterval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+  if (slideInterval) {
+    clearInterval(slideInterval);
+  }
+}
+
+function initSlider() {
+  const prevBtn = document.querySelector('.slider-btn.prev');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (!prevBtn || !nextBtn || !dots.length) return;
+  
+  // 矢印ボタン
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    startAutoSlide();
+  });
+  
+  // ドット
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  });
+  
+  // 自動スクロール開始
+  startAutoSlide();
+}
+
+// =========================
 //  テーマ（ライト/ダークモード）管理
 // =========================
 
@@ -36,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("click", toggleTheme);
     console.log("Theme toggle button initialized");
   }
+  
+  // 写真スライダー
+  initSlider();
   
   // モバイルメニュー
   const menuToggle = document.querySelector(".menu-toggle");
