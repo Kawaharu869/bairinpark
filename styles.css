@@ -684,23 +684,6 @@ body.dark-mode .theme-icon-dark {
    レスポンシブ
    ========================= */
 
-@media (max-width: 960px) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-grid,
-  .access-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .hero-title {
-    font-size: 26px;
-  }
-}
-
 @media (max-width: 720px) {
   .nav {
     display: none;
@@ -859,4 +842,36 @@ body.dark-mode .theme-toggle {
 body.dark-mode .theme-toggle:hover {
   background-color: #37323b;
   border-color: #49454f;
+}
+
+/* =========================
+   ダークモード - ハンバーガーメニュー
+   ========================= */
+
+body.dark-mode .menu-toggle {
+  border-color: #938f99;
+}
+
+body.dark-mode .menu-toggle:hover {
+  background-color: #37323b;
+}
+
+body.dark-mode .menu-icon,
+body.dark-mode .menu-icon::before,
+body.dark-mode .menu-icon::after {
+  background-color: #e6e1e5;
+}
+
+body.dark-mode .nav.open {
+  background-color: #141218;
+  border-bottom-color: #49454f;
+}
+
+body.dark-mode .nav.open .nav-link {
+  color: #cac4d0;
+}
+
+body.dark-mode .nav.open .nav-link:hover {
+  background-color: #4f378b;
+  color: #eaddff;
 }
