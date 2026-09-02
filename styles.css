@@ -725,23 +725,6 @@ body.dark-mode .theme-toggle .material-icons {
    ========================= */
 
 @media (max-width: 960px) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-grid,
-  .access-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .hero-title {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 960px) {
   .nav {
     position: absolute;
     left: 50%;
@@ -765,6 +748,10 @@ body.dark-mode .theme-toggle .material-icons {
 }
 
 @media (max-width: 720px) {
+  .header-container {
+    position: relative;
+  }
+
   .nav {
     display: none;
     position: absolute;
@@ -785,13 +772,13 @@ body.dark-mode .theme-toggle .material-icons {
     display: block;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
   .nav-list {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .events-grid {
