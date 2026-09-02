@@ -3,18 +3,19 @@
 // =========================
 
 function setTheme(theme) {
-  const html = document.documentElement;
+  const body = document.body;
   if (theme === "dark") {
-    html.setAttribute("data-theme", "dark");
+    body.classList.add("dark-mode");
   } else {
-    html.removeAttribute("data-theme");
+    body.classList.remove("dark-mode");
   }
   localStorage.setItem("theme", theme);
+  console.log("Theme set to:", theme);
 }
 
 function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute("data-theme") === "dark";
+  const body = document.body;
+  const isDark = body.classList.contains("dark-mode");
   const next = isDark ? "light" : "dark";
   setTheme(next);
 }
@@ -23,10 +24,17 @@ function toggleTheme() {
 //  DOM 読み込み完了後に実行
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
+  // 保存されたテーマを適用
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    setTheme("dark");
+  }
+  
   // テーマ切替ボタン
   const themeToggle = document.querySelector(".theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", toggleTheme);
+    console.log("Theme toggle button initialized");
   }
   
   // モバイルメニュー
