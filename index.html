@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Material Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400;500;700&display=swap" rel="stylesheet" />
 <!-- テーマ初期化スクリプト（最優先） -->
 <script>
   (function() {
@@ -39,11 +43,11 @@
       </nav>
       <div class="header-actions">
         <button class="theme-toggle" aria-label="テーマ切り替え">
-          <span class="theme-icon-light">🌙</span>
-          <span class="theme-icon-dark">☀️</span>
+          <span class="material-icons theme-icon-light">dark_mode</span>
+          <span class="material-icons theme-icon-dark">light_mode</span>
         </button>
         <button class="menu-toggle" aria-label="メニューを開く">
-          <span class="menu-icon"></span>
+          <span class="material-icons menu-icon">menu</span>
         </button>
       </div>
     </div>
@@ -92,8 +96,37 @@
             </p>
           </div>
           <div class="about-image">
-            <!-- 後で実際の画像を配置 -->
-            <div class="image-placeholder">梅林公園の画像</div>
+            <!-- 写真スライダー -->
+            <div class="image-slider">
+              <div class="slider-container">
+                <div class="slider-wrapper">
+                  <div class="slide">
+                    <div class="image-placeholder">梅林公園の写真 1</div>
+                  </div>
+                  <div class="slide">
+                    <div class="image-placeholder">梅林公園の写真 2</div>
+                  </div>
+                  <div class="slide">
+                    <div class="image-placeholder">梅林公園の写真 3</div>
+                  </div>
+                  <div class="slide">
+                    <div class="image-placeholder">梅林公園の写真 4</div>
+                  </div>
+                </div>
+              </div>
+              <button class="slider-btn prev" aria-label="前へ">
+                <span class="material-icons">chevron_left</span>
+              </button>
+              <button class="slider-btn next" aria-label="次へ">
+                <span class="material-icons">chevron_right</span>
+              </button>
+              <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
