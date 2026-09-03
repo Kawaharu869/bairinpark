@@ -258,6 +258,8 @@ body.dark-mode .theme-toggle .material-icons {
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 .menu-toggle:hover {
@@ -269,6 +271,9 @@ body.dark-mode .theme-toggle .material-icons {
   font-size: 24px;
   color: var(--md-sys-color-on-surface);
   display: block;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 body.dark-mode .menu-toggle {
@@ -281,7 +286,13 @@ body.dark-mode .menu-toggle:hover {
 }
 
 body.dark-mode .menu-icon {
-  color: #e6e1e5;
+  color: #e6e1e5 !important;
+}
+
+@media (max-width: 720px) {
+  .menu-toggle {
+    display: flex;
+  }
 }
 /* =========================
    ヘッダーアクション（テーマ切替ボタン）
