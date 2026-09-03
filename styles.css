@@ -247,11 +247,11 @@ body.dark-mode .theme-toggle .material-icons {
 
 .menu-toggle {
   display: none;
-  background: rgba(254, 247, 255, 0.5);
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: 50%;
+  background: transparent;
+  border: none;
   cursor: pointer;
   padding: 6px;
+  border-radius: 50%;
   transition: background-color 0.2s ease;
 }
 
@@ -265,9 +265,8 @@ body.dark-mode .theme-toggle .material-icons {
   display: block;
 }
 
-body.dark-mode .menu-toggle {
-  background: rgba(20, 18, 24, 0.5);
-  border-color: #49454f;
+body.dark-mode .menu-toggle:hover {
+  background-color: #37323b;
 }
 
 body.dark-mode .menu-icon {
