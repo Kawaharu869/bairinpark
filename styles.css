@@ -1026,8 +1026,10 @@ body.dark-mode .dot.active {
   }
 
   .header-container {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
     gap: 8px;
     min-height: 64px;
     padding: 10px 16px;
@@ -1044,31 +1046,35 @@ body.dark-mode .dot.active {
     gap: 4px;
   }
 
-  /* スマホでは絶対配置を解除して開閉式メニューにする */
-
+  /* 通常時は非表示。ヘッダー領域の高さには含めない */
   .nav {
-    position: static;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 1100;
     display: none;
-    grid-column: 1 / -1;
-    grid-row: 2;
     width: 100%;
     margin: 0;
     padding: 14px 12px 18px;
-    background-color: rgba(254, 247, 255, 0.88);
+    background-color: rgba(254, 247, 255, 0.9);
     border: 1px solid rgba(121, 116, 126, 0.2);
+    border-top: none;
     border-radius: 0 0 var(--radius-l) var(--radius-l);
     box-shadow: var(--shadow-lg);
     transform: none;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* 開いた時だけ、本文の上に重ねて表示 */
+  .nav.open {
+    display: block;
     animation: slideDown 0.22s ease-out;
   }
 
-  .nav.open {
-    display: block;
-  }
-
   .nav-list {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
@@ -1135,8 +1141,9 @@ body.dark-mode .dot.active {
     height: 360px;
   }
 
+  /* ダークモード時の重ねるメニュー */
   body.dark-mode .nav {
-    background-color: rgba(20, 18, 24, 0.9);
+    background-color: rgba(20, 18, 24, 0.92);
     border-color: rgba(202, 196, 208, 0.16);
   }
 
