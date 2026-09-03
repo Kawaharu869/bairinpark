@@ -269,8 +269,8 @@ body.dark-mode .theme-toggle .material-icons {
   font-size: 24px;
   color: var(--md-sys-color-on-surface);
   display: block;
-  margin: 0;
-  padding: 0;
+  filter: none;
+  transition: filter 0.2s ease;
 }
 
 body.dark-mode .menu-toggle {
@@ -284,6 +284,7 @@ body.dark-mode .menu-toggle:hover {
 
 body.dark-mode .menu-icon {
   color: #e6e1e5;
+  filter: invert(1);
 }
 /* =========================
    ヘッダーアクション（テーマ切替ボタン）
