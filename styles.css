@@ -142,12 +142,12 @@ img {
 }
 
 .header-container {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 8px 20px;
   gap: 16px;
 }
 
@@ -247,14 +247,14 @@ body.dark-mode .theme-toggle .material-icons {
 
 .menu-toggle {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: transparent;
   border: 1px solid var(--md-sys-color-outline);
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -268,7 +268,7 @@ body.dark-mode .theme-toggle .material-icons {
 }
 
 .menu-icon {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--md-sys-color-on-surface);
   display: block;
   background: transparent !important;
@@ -287,12 +287,6 @@ body.dark-mode .menu-toggle:hover {
 
 body.dark-mode .menu-icon {
   color: #e6e1e5 !important;
-}
-
-@media (max-width: 720px) {
-  .menu-toggle {
-    display: flex;
-  }
 }
 
 /* =========================
@@ -862,6 +856,82 @@ body.dark-mode .theme-toggle .material-icons {
 
   .menu-toggle {
     display: flex;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 46vh;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .about-grid,
+  .access-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-btn .material-icons {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(254, 247, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    padding: 16px 20px 24px;
+    box-shadow: var(--shadow-lg);
+    animation: slideDown 0.3s ease;
+    z-index: 999;
+  }
+
+  body.dark-mode .nav {
+    background-color: rgba(20, 18, 24, 0.95);
+    border-bottom-color: #49454f;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .header-container {
+    padding: 8px 16px;
   }
 
   .events-grid {
