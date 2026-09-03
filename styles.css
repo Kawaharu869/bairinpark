@@ -59,14 +59,14 @@ html {
 }
 
 body {
-  font-family: var(--font-family-base);
-  background-color: var(--md-sys-color-background);
-  color: var(--md-sys-color-on-background);
-  line-height: 1.6;
   overflow-x: hidden;
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
+  font-family: var(--font-family-base);
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a {
@@ -91,19 +91,20 @@ button {
 /* Material Icons */
 
 .material-icons {
+  display: inline-block;
+  direction: ltr;
   font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
   font-size: 24px;
-  line-height: 1;
+  font-style: normal;
+  font-weight: normal;
   letter-spacing: normal;
+  line-height: 1;
   text-transform: none;
   white-space: nowrap;
   word-wrap: normal;
-  direction: ltr;
+  font-feature-settings: "liga";
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "liga";
 }
 
 /* =========================
@@ -149,10 +150,9 @@ button {
 }
 
 .header-container {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 16px;
   width: 100%;
   max-width: 1200px;
   min-height: 64px;
@@ -164,6 +164,7 @@ button {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  z-index: 1;
 }
 
 .site-title {
@@ -181,10 +182,15 @@ button {
   line-height: 1.25;
 }
 
+/* PC：ナビゲーションをヘッダー中心へ固定 */
+
 .nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: flex;
   justify-content: center;
-  min-width: 0;
+  transform: translate(-50%, -50%);
 }
 
 .nav-list {
@@ -209,22 +215,24 @@ button {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  background-color: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
+  background-color: var(--md-sys-color-primary-container);
   outline: none;
 }
 
-/* ヘッダー右側ボタン */
+/* ヘッダー右側 */
 
 .header-actions {
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
+  margin-left: auto;
   flex-shrink: 0;
 }
 
-/* テーマ切替ボタン */
+/* テーマ切替 */
 
 .theme-toggle {
   position: relative;
@@ -264,8 +272,6 @@ button {
   pointer-events: none;
 }
 
-/* ライトモードでは月だけを表示 */
-
 .theme-icon-light {
   display: grid !important;
 }
@@ -273,8 +279,6 @@ button {
 .theme-icon-dark {
   display: none !important;
 }
-
-/* ダークモードでは太陽だけを表示 */
 
 body.dark-mode .theme-icon-light {
   display: none !important;
@@ -296,7 +300,7 @@ body.dark-mode .theme-toggle:focus-visible {
   border-color: #cac4d0;
 }
 
-/* ハンバーガーメニューボタン */
+/* ハンバーガーメニュー */
 
 .menu-toggle {
   display: none;
@@ -321,8 +325,6 @@ body.dark-mode .theme-toggle:focus-visible {
   border-color: var(--md-sys-color-outline-variant);
   outline: none;
 }
-
-/* CSS描画の三本線。必ずボタンの中央に来る */
 
 .menu-icon {
   display: flex;
@@ -965,7 +967,7 @@ body.dark-mode .dot.active {
 }
 
 /* =========================
-   モバイルメニュー用アニメーション
+   メニューのアニメーション
    ========================= */
 
 @keyframes slideDown {
@@ -981,7 +983,7 @@ body.dark-mode .dot.active {
 }
 
 /* =========================
-   タブレット表示
+   タブレット
    ========================= */
 
 @media (max-width: 960px) {
@@ -1015,7 +1017,7 @@ body.dark-mode .dot.active {
 }
 
 /* =========================
-   スマホ表示
+   スマホ
    ========================= */
 
 @media (max-width: 720px) {
@@ -1042,7 +1044,10 @@ body.dark-mode .dot.active {
     gap: 4px;
   }
 
+  /* スマホでは絶対配置を解除して開閉式メニューにする */
+
   .nav {
+    position: static;
     display: none;
     grid-column: 1 / -1;
     grid-row: 2;
@@ -1053,6 +1058,7 @@ body.dark-mode .dot.active {
     border: 1px solid rgba(121, 116, 126, 0.2);
     border-radius: 0 0 var(--radius-l) var(--radius-l);
     box-shadow: var(--shadow-lg);
+    transform: none;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     animation: slideDown 0.22s ease-out;
@@ -1146,7 +1152,7 @@ body.dark-mode .dot.active {
 }
 
 /* =========================
-   小型スマホ表示
+   小型スマホ
    ========================= */
 
 @media (max-width: 380px) {
