@@ -247,26 +247,39 @@ body.dark-mode .theme-toggle .material-icons {
 
 .menu-toggle {
   display: none;
+  width: 40px;
+  height: 40px;
   background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
+  border: 1px solid var(--md-sys-color-outline);
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .menu-toggle:hover {
   background-color: var(--md-sys-color-surface-variant);
+  border-color: var(--md-sys-color-outline-variant);
 }
 
 .menu-icon {
   font-size: 24px;
   color: var(--md-sys-color-on-surface);
   display: block;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-mode .menu-toggle {
+  border-color: #49454f;
 }
 
 body.dark-mode .menu-toggle:hover {
   background-color: #37323b;
+  border-color: #49454f;
 }
 
 body.dark-mode .menu-icon {
