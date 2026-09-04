@@ -116,15 +116,13 @@ function toggleTheme() {
 }
 
 // =========================
-//  開いた瞬間のテーマ点滅を防ぐ処理
+//  開いたときに一瞬ライトモードになるバグを修正
 // =========================
 
-(function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.documentElement.classList.add("dark-mode-preload");
-  }
-})();
+// HTML の <head> 内にテーマ初期化スクリプトがある場合、
+// ここでは body が作られた直後にクラスを付与するだけで十分です。
+// 点滅が気になる場合は、index.html 側の head 内スクリプトを削除し、
+// このファイルだけでテーマ管理するようにしてください。
 
 // =========================
 //  DOM 読み込み完了後に実行
@@ -132,8 +130,7 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", () => {
   console.log('DOM loaded');
   
-  // 保存されたテーマを適用（DOMContentLoaded より前に実行されるが、
-  // CSS 側で .dark-mode-preload を .dark-mode に引き継ぐ設計にする）
+  // 保存されたテーマを適用
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
