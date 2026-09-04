@@ -116,15 +116,27 @@ function toggleTheme() {
 }
 
 // =========================
+//  開いた瞬間のテーマ点滅を防ぐ処理
+// =========================
+
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark-mode-preload");
+  }
+})();
+
+// =========================
 //  DOM 読み込み完了後に実行
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
   console.log('DOM loaded');
   
-  // 保存されたテーマを適用
+  // 保存されたテーマを適用（DOMContentLoaded より前に実行されるが、
+  // CSS 側で .dark-mode-preload を .dark-mode に引き継ぐ設計にする）
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
-    setTheme("dark");
+    document.body.classList.add("dark-mode");
   }
   
   // テーマ切替ボタン
