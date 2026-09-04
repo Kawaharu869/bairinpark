@@ -1653,3 +1653,14 @@ body.dark-mode .dot.active {
 .event-location-link:hover {
   text-decoration: underline;
 }
+
+/* 開いた瞬間のテーマ点滅防止用 */
+html.dark-mode-preload body {
+  background-color: #141218;
+  color: #f5f5f5;
+}
+
+html.dark-mode-preload body.dark-mode {
+  background-color: #141218;
+  color: #f5f5f5;
+}
