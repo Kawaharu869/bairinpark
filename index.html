@@ -16,9 +16,9 @@
 </script>
   
   <meta charset="UTF-8" />
-  <title>谷尾崎町梅林公園 非公式 HP</title>
+  <title>谷尾崎町梅林公園 非公式 個人HP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="熊本市西区谷尾崎町にある谷尾崎町梅林公園の非公式ホームページ。お知らせ・イベント・アクセス・お問い合わせなど。" />
+  <meta name="description" content="熊本市西区谷尾崎町にある谷尾崎町梅林公園の非公式個人ホームページ。お知らせ・イベント・アクセス・お問い合わせなど。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -32,7 +32,7 @@
     <div class="header-container">
       <div class="logo">
         <h1 class="site-title">谷尾崎町梅林公園</h1>
-        <span class="site-subtitle">非公式 HP</span>
+        <span class="site-subtitle">非公式 個人HP</span>
       </div>
       <nav class="nav">
         <ul class="nav-list">
@@ -63,7 +63,7 @@
   <section class="hero">
     <div class="hero-content">
       <h2 class="hero-title">春には梅の花が咲き誇る、谷尾崎の憩いの場</h2>
-      <p class="hero-subtitle">熊本市西区谷尾崎町にある「谷尾崎町梅林公園」の<strong>非公式ホームページ</strong></p>
+      <p class="hero-subtitle">熊本市西区谷尾崎町にある「谷尾崎町梅林公園」の<strong>非公式の個人ホームページ</strong></p>
       <a href="#about" class="hero-button">詳しく見る</a>
     </div>
   </section>
@@ -85,7 +85,7 @@
             </p>
             <ul class="feature-list">
               <li>梅の木が多数植えられた梅林エリア</li>
-              <li>子どもも遊べる広場</li>
+              <li>伝説が残る座禅石</li>
               <li>散歩に最適な遊歩道</li>
               <li>ベンチや休憩スペース</li>
             </ul>
@@ -102,35 +102,70 @@
             </p>
           </div>
 <div class="about-image">
-  <!-- 写真スライダー -->
-  <div class="image-slider">
+  <div
+    class="image-slider"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="谷尾崎町梅林公園の写真"
+  >
     <div class="slider-container">
       <div class="slider-wrapper">
         <div class="slide">
-          <div class="image-placeholder">梅林公園の写真 1</div>
+          <img
+            src="images/image1.webp"
+            alt="谷尾崎町梅林公園の看板と梅の木"
+            class="slide-image"
+          />
         </div>
+
         <div class="slide">
-          <div class="image-placeholder">梅林公園の写真 2</div>
+          <img
+            src="images/image2.webp"
+            alt="谷尾崎町梅林公園の園内風景"
+            class="slide-image"
+          />
         </div>
+
         <div class="slide">
-          <div class="image-placeholder">梅林公園の写真 3</div>
+          <img
+            src="images/image3.webp"
+            alt="谷尾崎町梅林公園の梅の木"
+            class="slide-image"
+          />
         </div>
+
         <div class="slide">
-          <div class="image-placeholder">梅林公園の写真 4</div>
+          <img
+            src="images/image4.webp"
+            alt="谷尾崎町梅林公園の梅の花"
+            class="slide-image"
+          />
+        </div>
+
+        <div class="slide">
+          <img
+            src="images/image5.webp"
+            alt="谷尾崎町梅林公園にある武蔵ゆかりの座禅石"
+            class="slide-image"
+          />
         </div>
       </div>
     </div>
-    <button class="slider-btn prev" aria-label="前へ">
-      <span class="material-icons">chevron_left</span>
+
+    <button class="slider-btn prev" type="button" aria-label="前の写真">
+      <span class="material-icons" aria-hidden="true">chevron_left</span>
     </button>
-    <button class="slider-btn next" aria-label="次へ">
-      <span class="material-icons">chevron_right</span>
+
+    <button class="slider-btn next" type="button" aria-label="次の写真">
+      <span class="material-icons" aria-hidden="true">chevron_right</span>
     </button>
-    <div class="slider-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+
+    <div class="slider-dots" aria-label="写真を選択">
+      <button class="dot active" type="button" aria-label="写真 1 を表示"></button>
+      <button class="dot" type="button" aria-label="写真 2 を表示"></button>
+      <button class="dot" type="button" aria-label="写真 3 を表示"></button>
+      <button class="dot" type="button" aria-label="写真 4 を表示"></button>
+      <button class="dot" type="button" aria-label="写真 5 を表示"></button>
     </div>
   </div>
 </div>
@@ -222,14 +257,14 @@
         <div class="contact-grid">
           <div class="contact-text" style="grid-column: 1 / -1;">
             <p>
-              当サイトは、谷尾崎町梅林公園の<strong>非公式ホームページ</strong>です。<br />
+              当サイトは、谷尾崎町梅林公園の<strong>非公式の個人ホームページ</strong>です。<br />
               公園の管理・運営に関するお問い合わせは、熊本市または指定管理者までご連絡ください。
             </p>
             <p>
               当サイトに関するご質問・ご感想は、GitHub の「Issues」機能などをご利用ください。
             </p>
             <ul class="contact-note-list">
-              <li>このサイトは個人が運営する<strong>非公式 HP</strong>です</li>
+              <li>このサイトは個人が運営する<strong>非公式 個人HP</strong>です</li>
               <li>公式のお知らせとは異なる場合があります</li>
               <li>重要な情報は必ず公式をご確認ください</li>
             </ul>
