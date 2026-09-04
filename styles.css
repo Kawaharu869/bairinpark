@@ -1610,3 +1610,46 @@ body.dark-mode .dot.active {
 .back-button:active {
   transform: translateY(1px);
 }
+
+/* 日時・場所のコンテナ */
+.event-datetime-location {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+/* 位置アイコン＋リンクのグループ */
+.event-location-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+/* アイコン */
+.event-location-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+.event-location-icon .material-icons {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* リンク */
+.event-location-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.event-location-link:hover {
+  text-decoration: underline;
+}
