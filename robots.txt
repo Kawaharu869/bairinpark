@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kawaharu869.github.io/bairinpark/sitemap.xml
