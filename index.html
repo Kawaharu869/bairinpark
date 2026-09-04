@@ -185,6 +185,7 @@
         <div class="events-grid">
           <!-- イベントは必要に応じてここにカードを追加 -->
   <div class="event-card">
+    <!-- 写真 -->
     <div class="event-image-wrapper">
       <img
         src="images/event1.webp"
@@ -192,19 +193,35 @@
         class="event-image"
       />
     </div>
-    <div class="event-date-badge">
-      <span class="event-year">2027</span>
-      <span class="event-month-day">02/20</span>
+
+    <!-- 日時・場所 -->
+    <div class="event-datetime-location">
+      <span class="event-datetime">
+        2027 年 02 月 ?? 日（日）10:00 〜 15:00
+      </span>
+      <span class="event-location-icon" aria-hidden="true">
+        <span class="material-icons">location_on</span>
+      </span>
+      <a
+        href="https://maps.google.com/?q=32.80294968981893,130.66777574105663"
+        target="_blank"
+        rel="noopener"
+        class="event-location-link"
+      >
+        谷尾崎町梅林公園
+      </a>
     </div>
+
+    <!-- タイトル -->
     <h3 class="event-title">梅まつり</h3>
+
+    <!-- 説明 -->
     <p class="event-description">
       梅の開花に合わせて、梅まつりを開催します。
-      キッチンカーやバナナのたたき売りなどを予定しています。
+      キッチンカー出店やバナナのたたき売りなどを予定しています。
     </p>
-    <div class="event-meta">
-      <span class="event-time">10:00〜15:00</span>
-      <span class="event-location">谷尾崎町梅林公園 園内</span>
-    </div>
+
+    <!-- 詳細ボタン -->
     <a
       href="event1.html"
       class="event-detail-button"
