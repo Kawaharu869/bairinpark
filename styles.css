@@ -1799,12 +1799,12 @@ body:not(.dark-mode) .event-detail-button:hover {
   justify-content: center;
   color: var(--text, #333333);
   text-decoration: none;
-  padding: 0.4rem 0.5rem;
+  padding: 0.35rem 0.45rem;
   margin-left: 0.5rem;
-  border: 1px solid var(--border, #cccccc);
+  border: 1px solid var(--text, #333333);
   border-radius: 0.5rem;
-  background: var(--surface, #ffffff);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  background: transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .header-home-icon .material-icons {
@@ -1812,7 +1812,8 @@ body:not(.dark-mode) .event-detail-button:hover {
 }
 
 .header-home-icon:hover {
-  background: var(--border, #eeeeee);
+  background: var(--text, #333333);
+  color: var(--surface, #ffffff);
   border-color: var(--text, #333333);
 }
 
