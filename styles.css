@@ -1664,3 +1664,86 @@ body:not(.dark-mode) .event-detail-button:hover {
 .event-location-link:hover {
   text-decoration: underline;
 }
+
+/* イベント詳細：本文エリア */
+.event-detail-content {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* 見出し（h3） */
+.event-detail-subtitle {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text);
+}
+
+/* メタ情報（日時・場所） */
+.event-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-detail-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.event-detail-icon {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.event-detail-label {
+  font-weight: 600;
+}
+
+.event-detail-value {
+  color: var(--text);
+}
+
+.event-detail-location-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.event-detail-location-link:hover {
+  text-decoration: underline;
+}
+
+/* ホームに戻るボタン */
+.event-detail-actions {
+  margin-top: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.back-button:hover {
+  background: var(--border);
+}
+
+.back-button:active {
+  transform: translateY(1px);
+}
