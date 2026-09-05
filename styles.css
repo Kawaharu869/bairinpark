@@ -1792,16 +1792,16 @@ body:not(.dark-mode) .event-detail-button:hover {
   font-size: 1.1rem;
 }
 
-/* ヘッダー右側のホームアイコン（枠付き） */
+/* ヘッダー右側のホームアイコン（枠のみ） */
 .header-home-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--text, #333333);
+  color: #ffffff;
   text-decoration: none;
   padding: 0.35rem 0.45rem;
   margin-left: 0.5rem;
-  border: 1px solid var(--text, #333333);
+  border: 1px solid #ffffff;
   border-radius: 0.5rem;
   background: transparent;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -1812,9 +1812,9 @@ body:not(.dark-mode) .event-detail-button:hover {
 }
 
 .header-home-icon:hover {
-  background: var(--text, #333333);
-  color: var(--surface, #ffffff);
-  border-color: var(--text, #333333);
+  background: #ffffff;
+  color: #141218;
+  border-color: #ffffff;
 }
 
 /* スマホでは必ず表示 */
