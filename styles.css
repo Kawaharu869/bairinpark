@@ -1502,8 +1502,8 @@ body.dark-mode .dot.active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary);
-  color: #fff;
+  background: #7c4dff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -1513,12 +1513,12 @@ body.dark-mode .dot.active {
   border: none;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
 .event-detail-button:hover {
-  background: var(--primary-dark, #b388ff);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  background: #651fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
 }
 
 .event-detail-button:active {
