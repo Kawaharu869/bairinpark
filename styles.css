@@ -1751,11 +1751,12 @@ body:not(.dark-mode) .event-detail-button:hover {
   text-align: center;
 }
 
+/* ライト・ダーク共通：常に背景色付き */
 .back-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--primary);
+  background: #7c4dff;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
