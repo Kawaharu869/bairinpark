@@ -1525,6 +1525,17 @@ body.dark-mode .dot.active {
   transform: translateY(1px);
 }
 
+/* ライトモード用：背景を濃い色、文字を白に固定 */
+body:not(.dark-mode) .event-detail-button {
+  background: #7c4dff;
+  color: #ffffff;
+}
+
+body:not(.dark-mode) .event-detail-button:hover {
+  background: #651fff;
+  color: #ffffff;
+}
+
 /* イベント詳細ページ：写真 */
 .event-detail-image img {
   width: 100%;
