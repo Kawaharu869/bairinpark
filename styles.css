@@ -1539,8 +1539,11 @@ body:not(.dark-mode) .event-detail-button:hover {
 /* イベント詳細ページ：写真 */
 .event-detail-image img {
   width: 100%;
+  max-width: 700px;
+  height: auto;
   border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
+  display: block;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -1780,4 +1783,28 @@ body:not(.dark-mode) .event-detail-button:hover {
 
 .back-button .material-icons {
   font-size: 1.1rem;
+}
+
+/* ヘッダー右側のアイコン（スマホ用ホームボタン） */
+.header-home-icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+}
+
+.header-home-icon .material-icons {
+  font-size: 1.5rem;
+}
+
+/* スマホ表示時のみ表示 */
+@media (max-width: 768px) {
+  .header-home-icon {
+    display: inline-flex;
+  }
+
+  /* メニューアイコンはそのまま残す場合は何もしなくて OK */
 }
